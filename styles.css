@@ -46,7 +46,7 @@ a{color:var(--text);text-decoration:none}
 
 .wave{height:320px;border-radius:20px;background:
   linear-gradient(135deg, rgba(202,160,75,.2), rgba(54,94,255,.2)),
-  url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1200 400\" preserveAspectRatio=\"none\"><path fill=\"rgba(255,255,255,.06)\" d=\"M0 250 C 300 200, 900 300, 1200 220 L1200 400 L0 400 Z\"/></svg>') center/cover no-repeat;
+  linear-gradient(135deg, rgba(202,160,75,.1), rgba(54,94,255,.1)) center/cover no-repeat;
   box-shadow:var(--shadow)}
 
 .wide{padding:48px 0}

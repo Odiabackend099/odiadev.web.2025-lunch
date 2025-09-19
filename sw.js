@@ -68,7 +68,7 @@ self.addEventListener('fetch', event => {
     // Try network first (good for fresh content)
     fetch(event.request, {
       // Optimize for slow Nigerian networks
-      signal: AbortSignal.timeout(8000) // 8 second timeout
+      timeout: 8000 // 8 second timeout
     })
       .then(response => {
         // If network succeeds, cache the response
