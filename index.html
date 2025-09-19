@@ -1,396 +1,118 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ODIADEV AI LTD — Adaqua AI (Flagship), Cross AI, MISS Legal AI</title>
-  <meta name="description" content="ODIADEV AI LTD — Nigeria's voice‑AI infrastructure. Flagship product: Adaqua AI. Solutions include Cross AI (Emergency) and MISS Legal AI." />
-  
-  <!-- PWA Meta Tags -->
-  <meta name="theme-color" content="#caa04b" />
-  <meta name="mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="ODIADEV AI" />
-  
-  <!-- Manifest -->
-  <link rel="manifest" href="/manifest.json" />
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InVybCgjZ3JhZGllbnQwX3JhZGlhbF8xXzEpIi8+CjxjaXJjbGUgY3g9IjE2IiBjeT0iMTYiIHI9IjQiIGZpbGw9IiNjYWEwNGIiLz4KPGRlZnM+CjxyYWRpYWxHcmFkaWVudCBpZD0iZ3JhZGllbnQwX3JhZGlhbF8xXzEiIGN4PSIwIiBjeT0iMCIgcj0iMSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIGdyYWRpZW50VHJhbnNmb3JtPSJ0cmFuc2xhdGUoOS42IDkuNikgcm90YXRlKDQ1KSBzY2FsZSgzMS44MTkpIj4KPHN0b3Agc3RvcC1jb2xvcj0iI2NhYTA0YiIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMyYTM2NWQiLz4KPC9yYWRpYWxHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4=" />
-  
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="styles.css" />
-  
-  <!-- Scripts -->
-  <script defer src="script.js" onerror="console.error('Script failed to load')"></script><noscript><div style="padding:20px;text-align:center;color:#caa04b;">JavaScript is required for full functionality</div></noscript>
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ODIADEV AI LTD — Nigeria's Voice-AI Infrastructure | Adaqua AI, Cross AI, MISS Legal AI</title>
+<meta name="description" content="ODIADEV AI LTD — Nigeria's voice-AI infrastructure. Flagship Adaqua AI powers multilingual agents with natural Nigerian accents. Solutions include Cross AI emergency response and MISS Legal AI for law firms."/>
+<meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://odia.dev/"/>
+<meta property="og:image" content="assets/img/og-image.png"/>
+<link rel="icon" href="favicon.ico"/>
+<style>
+:root{--primary:#1e3a8a;--dark:#1e40af;--gold:#d97706;--muted:#6b7280;--border:#e5e7eb}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;color:#1f2937}
+.container{max-width:1200px;margin:0 auto;padding:0 2rem}
+header{background:var(--primary);color:#fff;position:sticky;top:0;z-index:10}
+.header{height:72px;display:flex;align-items:center;justify-content:space-between}
+nav ul{list-style:none;display:flex;gap:1rem;margin:0;padding:0}nav a{color:#fff;text-decoration:none;opacity:.9}
+.hero{min-height:86vh;display:flex;align-items:center;background:linear-gradient(135deg,var(--primary),var(--dark));color:#fff}
+.hero .badge{display:inline-block;background:#fef3c7;color:var(--gold);padding:.5rem 1rem;border-radius:999px;font-weight:700;margin-bottom:1.5rem}
+.hero h1{font-size:3.4rem;letter-spacing:-.02em;margin:0}
+section{padding:5rem 0}.grid{display:grid;grid-template-columns:1fr 1.1fr;gap:2.5rem;align-items:center}
+.eyebrow{font-size:.85rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.8rem;font-weight:700}
+h2{font-weight:300;font-size:2.6rem;letter-spacing:-.02em;margin:.3rem 0 1rem}
+.media{background:#f8fafc;border:1px solid var(--border);border-radius:8px;aspect-ratio:16/9;display:grid;place-items:center}
+.media button{background:var(--primary);color:#fff;border:none;width:80px;height:80px;border-radius:50%;font-size:2rem}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.card{border:1px solid var(--border);border-radius:8px;padding:1.2rem;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.04)}
+.card h3{margin:.2rem 0 .6rem}.features{list-style:none;padding-left:1.2rem}.features li{position:relative;padding:.35rem 0;color:#4b5563}
+.features li:before{content:"✓";position:absolute;left:-1.2rem;color:var(--gold);font-weight:800}
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.team figure{border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.team img{width:100%;height:360px;object-fit:cover;display:block}
+.team figcaption{padding:1rem}.role{color:var(--gold);font-weight:700;margin-top:.25rem}
+footer{background:var(--primary);color:#fff}.footer-grid{display:grid;grid-template-columns:2fr repeat(3,1fr);gap:1.2rem;margin-top:1.5rem}
+@media(max-width:980px){.grid,.cards,.team,.footer-grid{grid-template-columns:1fr}nav{display:none}.hero h1{font-size:2rem}}
+.btn{display:inline-flex;align-items:center;border:2px solid var(--gold);color:var(--gold);padding:.8rem 1.2rem;text-decoration:none;font-weight:700;background:transparent}
+.btn:hover{background:var(--gold);color:#fff}
+</style>
 </head>
 <body>
-  <header class="site-header container">
-    <div class="brand">
-      <div class="logo">◎</div>
-      <div class="brand-text">
-        <strong>ODIADEV AI LTD</strong>
-        <span class="sub">Flagship: Adaqua AI</span>
-      </div>
-    </div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#solutions">Solutions</a>
-      <a href="#products">Products</a>
-      <a href="#partnerships">Partnerships</a>
-      <a href="#team">Team</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#resources">Resources</a>
-      <a href="#contact">Contact</a>
-      <button class="btn small ghost" onclick="alert('Voice chat coming soon')">Start Voice Chat</button>
-    </nav>
-  </header>
+<header><div class="container header">
+  <div style="display:flex;align-items:center;gap:.6rem"><img src="assets/img/logo.png" alt="ODIADEV Logo" style="width:34px;height:34px;border-radius:50%"><strong>ODIADEV</strong></div>
+  <nav><ul><li><a href="#whatwedo">What We Do</a></li><li><a href="#products">Products</a></li><li><a href="#team">Team</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+</div></header>
 
-  <main id="home">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="pill">🏛️ University Backed</p>
-          <h1>Welcome to <span class="gold">ODIADEV</span></h1>
-          <h2 class="lead">Nigeria's Voice‑AI Platform — built by Nigerians, for Africa.</h2>
-          <p class="muted">Talk in Nigerian English, Yoruba, Hausa, and Igbo accents. Type or speak with our AI agents powered by our flagship <strong>Adaqua AI</strong> platform.</p>
-          <div class="cta-row">
-            <a class="btn primary" href="#contact">Start Chat in Nigerian English</a>
-            <a class="btn ghost" href="#contact">WhatsApp Demo</a>
-          </div>
-          <ul class="badges">
-            <li>🎓 University Research Grade</li>
-            <li>🕑 24/7 Nigerian Languages</li>
-            <li>🔐 Enterprise Security</li>
-          </ul>
-        </div>
-        <div class="hero-media" aria-hidden="true">
-          <div class="wave"></div>
-        </div>
-      </div>
-    </section>
+<main>
+<section class="hero"><div class="container">
+  <div class="badge">Originating Ideas and Creating Opportunities</div>
+  <h1>THE PURSUIT OF AI EXCELLENCE</h1>
+  <p style="opacity:.9;margin-top:.6rem;text-transform:uppercase;letter-spacing:.12em">Nigeria's Voice‑AI Infrastructure</p>
+</div></section>
 
-    <section id="whatwedo" class="wide container">
-      <div class="grid-2">
-        <div>
-          <h3 class="eyebrow">What We Do</h3>
-          <h2>We are your <span class="gold">Chief AI Officers</span></h2>
-          <p>We apply university‑backed research to design customized voice‑AI systems that run across WhatsApp, Telegram, and the web. From <strong>Cross AI</strong> emergency response to <strong>MISS Legal AI</strong> for law firms, we build pragmatic AI that saves time and money.</p>
-          <div class="button-row">
-            <a class="btn secondary" href="#solutions">The ODIADEV Difference</a>
-            <a class="btn ghost" href="#products">AI‑Forward Experience</a>
-          </div>
-        </div>
-        <div class="panel video">
-          <button class="play" aria-label="Play Overview Video">▶</button>
-          <div class="caption">CEO Austyn Eguale presenting ODIADEV voice‑AI solutions</div>
-        </div>
-      </div>
-    </section>
+<section id="whatwedo"><div class="container grid">
+  <div>
+    <div class="eyebrow">What We Do</div>
+    <h2>WE ARE YOUR CHIEF<br/>AI<br/>OFFICERS</h2>
+    <p style="color:#4b5563">We build pragmatic, culturally fluent voice‑AI for Nigerian businesses. From <strong>Cross AI</strong> emergency response to <strong>MISS Legal AI</strong> for law practices, our flagship <strong>Adaqua AI</strong> powers reliable, multilingual agents across WhatsApp, Telegram, and the web.</p>
+    <div style="margin-top:1rem;display:flex;gap:.6rem"><a class="btn" href="#products">The ODIADEV Difference</a><a class="btn" href="#products">AI‑Forward Experience</a></div>
+  </div>
+  <div class="media" aria-label="Overview video"><button onclick="alert('Demo video placeholder')">▶</button></div>
+</div></section>
 
-    <section id="products" class="container">
-      <h3 class="eyebrow">Products</h3>
-      <h2>Flagship & Core Solutions</h2>
-      <div class="card-grid">
-        <article class="card">
-          <h3>Adaqua AI <span class="pill tiny">Flagship</span></h3>
-          <p>Our production voice‑AI platform powering multilingual agents with natural Nigerian accents. Integrates with WhatsApp, Telegram, and web chat widgets.</p>
-          <ul class="check">
-            <li>Natural Nigerian English + local languages</li>
-            <li>Real‑time speech + text</li>
-            <li>Secure APIs, Supabase friendly</li>
-          </ul>
-          <a href="#contact" class="btn small">See Demo</a>
-        </article>
+<section id="products"><div class="container">
+  <div class="eyebrow">Products</div><h2>AI Solutions for Nigeria</h2>
+  <div class="cards">
+    <article class="card"><h3>Adaqua AI <span style="background:#d97706;color:#fff;border-radius:4px;padding:.1rem .35rem;font-size:.75rem">Flagship</span></h3>
+      <p style="color:#4b5563">Production voice‑AI platform with natural Nigerian accents.</p>
+      <ul class="features"><li>Nigerian English + Yoruba, Hausa, Igbo</li><li>Real‑time speech & text</li><li>Secure APIs, Supabase‑friendly</li></ul>
+      <a class="btn" href="#contact">See Demo</a></article>
+    <article class="card"><h3>Cross AI</h3>
+      <p style="color:#4b5563">Emergency response & dispatch assistant.</p>
+      <ul class="features"><li>Voice intake & classification</li><li>Intelligent triage + escalation</li><li>NDPR‑aligned audit trails</li></ul>
+      <a class="btn" href="#contact">Talk to Sales</a></article>
+    <article class="card"><h3>MISS Legal AI</h3>
+      <p style="color:#4b5563">Legal front‑desk & case‑status assistant.</p>
+      <ul class="features"><li>WhatsApp + Web widget</li><li>Secure client workflows</li><li>Configurable prompts & guardrails</li></ul>
+      <a class="btn" href="#contact">Book Pilot</a></article>
+  </div>
+</div></section>
 
-        <article class="card">
-          <h3>Cross AI</h3>
-          <p>Emergency response & dispatch assistant for states, hospitals, and campuses. Voice intake, incident triage, escalation, and audit trails.</p>
-          <ul class="check">
-            <li>Voice intake & classification</li>
-            <li>Handoff to responders</li>
-            <li>NDPR‑aligned logging</li>
-          </ul>
-          <a href="#contact" class="btn small">Talk to Sales</a>
-        </article>
+<section id="team"><div class="container">
+  <div class="eyebrow">Leadership</div><h2>Experienced Professionals</h2>
+  <div class="team">
+    <figure><img src="assets/img/austyn.jpg" alt="Austyn Eguale — CEO" loading="lazy"><figcaption><strong>Austyn Eguale</strong><div class="role">Chief Executive Officer (CEO)</div></figcaption></figure>
+    <figure><img src="assets/img/ntaji.png" alt="Peter Ntaji — Director, Government Partnerships" loading="lazy"><figcaption><strong>Peter Ntaji</strong><div class="role">Director, Government Partnerships</div></figcaption></figure>
+    <figure><img src="assets/img/benjamin.png" alt="Benjamin Nwoye — Director, Commercial Strategy" loading="lazy"><figcaption><strong>Benjamin Nwoye</strong><div class="role">Director, Commercial Strategy</div></figcaption></figure>
+  </div>
+</div></section>
 
-        <article class="card">
-          <h3>MISS Legal AI</h3>
-          <p>Legal front‑desk & case‑status assistant for law firms. Intake, FAQs, reminders, and safe client updates in Hausa, Igbo, Yoruba, and English.</p>
-          <ul class="check">
-            <li>WhatsApp + Web widget</li>
-            <li>Secure client workflows</li>
-            <li>Configurable prompts & guardrails</li>
-          </ul>
-          <a href="#contact" class="btn small">Book Pilot</a>
-        </article>
-      </div>
-    </section>
+<section id="contact"><div class="container grid">
+  <div><div class="eyebrow">Contact</div><h2>Get Started Today</h2>
+    <ul class="features"><li><strong>Email:</strong> contact@odia.dev</li><li><strong>Sales:</strong> sales@odia.dev</li><li><strong>Location:</strong> Lagos, Nigeria</li></ul>
+  </div>
+  <div class="card"><h3>Tell us about your AI needs</h3>
+    <form onsubmit="event.preventDefault();alert('Thanks! We will reach out.');">
+      <input required placeholder="Your Name" style="width:100%;padding:.8rem;border:1px solid var(--border);border-radius:6px;margin:.5rem 0">
+      <input required type="email" placeholder="Email Address" style="width:100%;padding:.8rem;border:1px solid var(--border);border-radius:6px;margin:.5rem 0">
+      <input placeholder="Company Name" style="width:100%;padding:.8rem;border:1px solid var(--border);border-radius:6px;margin:.5rem 0">
+      <textarea rows="4" placeholder="Tell us about your project..." style="width:100%;padding:.8rem;border:1px solid var(--border);border-radius:6px;margin:.5rem 0"></textarea>
+      <button class="btn" type="submit">Contact Our Team</button>
+    </form>
+  </div>
+</div></section>
+</main>
 
-    <section id="solutions" class="container">
-      <h3 class="eyebrow">Solutions</h3>
-      <div class="solutions-grid">
-        <div class="sol">
-          <h4>Voice AI Agents</h4>
-          <p>Conversational agents with Nigerian accents for sales, support, and operations.</p>
-        </div>
-        <div class="sol">
-          <h4>WhatsApp Automation</h4>
-          <p>End‑to‑end flows with Meta/Cloud API, n8n, and Supabase integrations.</p>
-        </div>
-        <div class="sol">
-          <h4>Emergency Response</h4>
-          <p>Cross AI: intake, triage, and escalation with responder handoff.</p>
-        </div>
-        <div class="sol">
-          <h4>Custom Development</h4>
-          <p>Bespoke AI features on top of Adaqua AI for enterprise needs.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="partnerships" class="container">
-      <h3 class="eyebrow">Strategic Partnerships</h3>
-      <div class="card-grid">
-        <article class="card">
-          <h4>Mudiame International University</h4>
-          <p>Primary Academic Partner providing research excellence, credibility, and access to innovation labs.</p>
-          <ul class="tags"><li>Research</li><li>Credibility</li><li>Innovation</li></ul>
-        </article>
-        <article class="card">
-          <h4>Cross AI International</h4>
-          <p>Global standards and cross‑border collaboration to bring world‑class AI to Nigeria.</p>
-          <ul class="tags"><li>Global</li><li>Standards</li><li>Innovation</li></ul>
-        </article>
-        <article class="card">
-          <h4>Intech Wealth Advisory AI</h4>
-          <p>Financial AI partnership for advisory systems and fintech integrations.</p>
-          <ul class="tags"><li>FinTech</li><li>Advisory</li><li>Analytics</li></ul>
-        </article>
-      </div>
-      <div class="button-row center">
-        <a class="btn ghost" href="#contact">Partnership Opportunities</a>
-        <a class="btn secondary" href="#contact">Contact Partnerships</a>
-      </div>
-    </section>
-
-    <section id="team" class="container">
-      <h3 class="eyebrow">Leadership Team</h3>
-      <div class="team-grid">
-        <article class="person">
-          <h4>Austyn Eguale</h4>
-          <p class="role">Chief Executive Officer (CEO)</p>
-          <p>Visionary founder and product architect leading ODIADEV's voice‑AI infrastructure and university‑backed innovations.</p>
-        </article>
-        <article class="person">
-          <h4>Peter Ntaji</h4>
-          <p class="role">Director, Government Partnerships</p>
-          <p>Leadership advisor focused on state‑level adoption of Cross AI emergency systems.</p>
-        </article>
-        <article class="person">
-          <h4>Benjamin Nwoye</h4>
-          <p class="role">Director, Commercial Strategy</p>
-          <p>Strategic growth leader bridging automotive, tech, and enterprise adoption of ODIADEV voice automation.</p>
-        </article>
-      </div>
-
-      <h3 class="eyebrow space-top">Core Team</h3>
-      <div class="team-grid">
-        <article class="person">
-          <h4>GloryGold Eseose</h4>
-          <p class="role">Executive Secretary</p>
-          <p>Operational excellence & legal documentation across CAC, research, and internal initiatives.</p>
-        </article>
-        <article class="person">
-          <h4>Setale Eguale</h4>
-          <p class="role">Director, International Relations (NBSC Liaison)</p>
-          <p>Global voice ambassador connecting ODIADEV with international standards and education systems.</p>
-        </article>
-        <article class="person">
-          <h4>Nnamdi Okeke</h4>
-          <p class="role">Software Developer, AI Systems</p>
-          <p>Backend & full‑stack engineer powering ODIADEV agents, integrations, and data flows.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="pricing" class="container">
-      <h3 class="eyebrow">Pricing</h3>
-      <p class="muted">Transparent plans for Nigerian businesses. Prices in NGN.</p>
-      <div class="price-grid">
-        <article class="price-card">
-          <h4>Starter</h4>
-          <div class="price">₦8,000<span>/month</span></div>
-          <ul class="check">
-            <li>Nigerian English voice agent</li>
-            <li>100 interactions / month</li>
-            <li>WhatsApp integration</li>
-            <li>Email support</li>
-          </ul>
-          <a class="btn small" href="#contact">Start Trial</a>
-        </article>
-        <article class="price-card featured">
-          <div class="most">Most Popular</div>
-          <h4>Business</h4>
-          <div class="price">₦15,000<span>/month</span></div>
-          <ul class="check">
-            <li>Multi‑language (Yoruba, Hausa, Igbo)</li>
-            <li>500 interactions / month</li>
-            <li>Advanced analytics</li>
-            <li>Priority support</li>
-          </ul>
-          <a class="btn primary" href="#contact">Get Started</a>
-        </article>
-        <article class="price-card">
-          <h4>Enterprise</h4>
-          <div class="price">₦75,000<span>/month</span></div>
-          <ul class="check">
-            <li>Unlimited interactions</li>
-            <li>Custom agent training</li>
-            <li>24/7 support & SLAs</li>
-            <li>On‑prem / private cloud options</li>
-          </ul>
-          <a class="btn small" href="#contact">Contact Sales</a>
-        </article>
-      </div>
-    </section>
-
-    <section id="resources" class="container">
-      <h3 class="eyebrow">Resources</h3>
-      <div class="card-grid">
-        <article class="card">
-          <h4>Developer Docs</h4>
-          <p>API reference and quickstarts for Adaqua AI integrations.</p>
-          <a class="btn small" href="#contact">Request Access</a>
-        </article>
-        <article class="card">
-          <h4>Status</h4>
-          <p>Uptime and incident history for Adaqua AI.</p>
-          <a class="btn small" href="#contact">View Status</a>
-        </article>
-        <article class="card">
-          <h4>Support</h4>
-          <p>Contact our team for onboarding, pilots, and enterprise deployments.</p>
-          <a class="btn small" href="#contact">Open Ticket</a>
-        </article>
-      </div>
-    </section>
-
-    <section id="contact" class="container contact">
-      <div class="form-card">
-        <h3>Get Started Today</h3>
-        <p class="muted">Tell us about your AI needs</p>
-        <form onsubmit="event.preventDefault(); alert('Thanks! We will reach out.');">
-          <input required placeholder="Your Name" />
-          <input required type="email" placeholder="Email Address" />
-          <input placeholder="Company Name" />
-          <select>
-            <option>Voice AI Agents</option>
-            <option>Adaqua AI</option>
-            <option>Cross AI</option>
-            <option>MISS Legal AI</option>
-          </select>
-          <textarea rows="4" placeholder="Tell us about your project..."></textarea>
-          <button class="btn primary" type="submit">Contact Our Team</button>
-        </form>
-      </div>
-      <div class="contact-details">
-        <h3>Get In Touch</h3>
-        <ul class="details">
-          <li><strong>Email</strong><br/><a href="mailto:contact@odia.dev">contact@odia.dev</a></li>
-          <li><strong>Location</strong><br/>Lagos, Nigeria</li>
-        </ul>
-        <div class="quick-actions">
-          <a class="btn ghost" href="#contact">Start WhatsApp Onboarding</a>
-          <a class="btn ghost" href="#contact">Try Live Demo</a>
-          <a class="btn ghost" href="#contact">Schedule Call with CEO</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <div class="brand small">
-          <div class="logo">◎</div>
-          <div class="brand-text">
-            <strong>ODIADEV AI LTD</strong>
-            <span class="sub">Nigeria's voice‑AI infrastructure company.</span>
-          </div>
-        </div>
-        <p class="muted">Transforming businesses with intelligent voice agents and cultural AI.</p>
-        <div class="social">
-          <a href="#" aria-label="LinkedIn">in</a>
-          <a href="#" aria-label="X">𝕏</a>
-        </div>
-      </div>
-
-      <div>
-        <h5>Solutions</h5>
-        <ul class="linklist">
-          <li><a href="#solutions">Voice AI Agents</a></li>
-          <li><a href="#solutions">AI Solutions</a></li>
-          <li><a href="#solutions">WhatsApp Automation</a></li>
-          <li><a href="#solutions">Emergency Response</a></li>
-          <li><a href="#solutions">Custom Development</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h5>Company</h5>
-        <ul class="linklist">
-          <li><a href="#whatwedo">Our Story</a></li>
-          <li><a href="#team">Leadership</a></li>
-          <li><a href="#products">Adaqua AI</a></li>
-          <li><a href="#partnerships">Partnerships</a></li>
-          <li><a href="#resources">Press & Media</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h5>Resources</h5>
-        <ul class="linklist">
-          <li><a href="#resources">Developer Resources</a></li>
-          <li><a href="#resources">Documentation</a></li>
-          <li><a href="#resources">API Reference</a></li>
-          <li><a href="#resources">System Status</a></li>
-          <li><a href="#resources">Support Portal</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h5>Contact</h5>
-        <ul class="linklist">
-          <li><strong>General</strong> — <a href="mailto:info@odia.ai">info@odia.ai</a></li>
-          <li><strong>Sales</strong> — <a href="mailto:sales@odia.ai">sales@odia.ai</a></li>
-          <li><strong>WhatsApp</strong> — +234 812 345 6789</li>
-          <li>Lagos Office — Victoria Island, Lagos, Nigeria</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="container legal">
-      <p>© 2025 ODIADEV AI LTD. All Rights Reserved.</p>
-      <ul>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms of Service</a></li>
-        <li><a href="#">Cookie Policy</a></li>
-        <li><a href="#">Security</a></li>
-      </ul>
-    </div>
-
-    <div class="container compliance">
-      <div>
-        <h6>University Backed Innovation</h6>
-        <p class="muted">Backed by Mudiame International University for research‑grade innovation and academic excellence.</p>
-      </div>
-      <div>
-        <h6>Compliance & Security</h6>
-        <p class="muted">NDPR & GDPR aligned data practices. Enterprise‑grade security for all voice‑AI solutions.</p>
-      </div>
-    </div>
-  </footer>
-</body>
-</html>
+<footer><div class="container" style="padding:2rem 0">
+  <div style="font-weight:800;letter-spacing:2px">ODIADEV</div>
+  <div class="footer-grid">
+    <div><strong>Solutions</strong><ul style="list-style:none;padding:0;margin:.6rem 0;color:#fff;opacity:.9">
+      <li>Adaqua AI</li><li>Cross AI</li><li>MISS Legal AI</li></ul></div>
+    <div><strong>Company</strong><ul style="list-style:none;padding:0;margin:.6rem 0;color:#fff;opacity:.9">
+      <li>Leadership</li><li>Partnerships</li></ul></div>
+    <div><strong>Contact</strong><ul style="list-style:none;padding:0;margin:.6rem 0;color:#fff;opacity:.9">
+      <li>contact@odia.dev</li><li>sales@odia.dev</li><li>Lagos, Nigeria</li></ul></div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,.25);margin-top:1rem;padding-top:1rem;font-size:.9rem">© 2025 ODIADEV AI LTD</div>
+</div></footer>
+<script>if('serviceWorker'in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{});}</script>
+</body></html>
