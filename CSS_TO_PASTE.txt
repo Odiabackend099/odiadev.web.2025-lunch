@@ -1,0 +1,13 @@
+/* --- 3D hero background image (non-breaking) --- */
+.hero-section { position: relative; }
+.hero-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("assets/img/hero-3d.webp") center/cover no-repeat;
+  opacity: 0.28;
+  z-index: 1;
+  pointer-events: none;
+}
+.hero-content { position: relative; z-index: 2; }
+@media (max-width: 768px) { .hero-section::after { opacity: 0.22; } }

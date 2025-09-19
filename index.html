@@ -35,6 +35,9 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  
+  <!-- Preload hero background image -->
+  <link rel="preload" as="image" href="assets/img/hero-3d.webp" />
 
   <style>
     /* IEQ-style system (unchanged) */
@@ -137,6 +140,20 @@
       .footer-grid{grid-template-columns:1fr;gap:2rem}
       .footer-bottom{flex-direction:column;gap:1rem;text-align:center}
     }
+
+    /* --- 3D hero background image (non-breaking) --- */
+    .hero-section { position: relative; }
+    .hero-section::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("assets/img/hero-3d.webp") center/cover no-repeat;
+      opacity: 0.28;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 2; }
+    @media (max-width: 768px) { .hero-section::after { opacity: 0.22; } }
   </style>
 </head>
 
