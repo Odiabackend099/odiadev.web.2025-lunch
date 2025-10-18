@@ -35,10 +35,11 @@ export class ChatWidget {
     this.window = document.getElementById('chat-window');
     this.closeBtn = document.getElementById('chat-close');
     this.messagesContainer = document.getElementById('chat-messages');
-    this.inputField = document.getElementById('chat-input');
-    this.voiceBtn = document.getElementById('voice-button');
-    this.sendBtn = document.getElementById('send-button');
+    this.inputField = document.getElementById('chat-widget-input');
+    this.voiceBtn = document.getElementById('voice-input-btn');
+    this.sendBtn = document.getElementById('chat-widget-send-btn');
     this.welcomeSection = document.getElementById('welcome-section');
+    this.thinkingIndicator = document.getElementById('thinking-indicator');
 
     const missing = [];
     if (!this.widget) missing.push('chat-widget');
@@ -101,23 +102,44 @@ export class ChatWidget {
   }
 
   initSpeechHandlers() {
-    this.speechHandler.setOnResult((transcript) => {
+    if (!this.speechHandler.isSupported()) {
+      this.voiceBtn.style.display = 'none';
+      return;
+    }
+
+    this.speechHandler.onResult = (transcript) => {
       this.inputField.value = transcript;
-      this.inputField.focus();
-    });
+      // Auto-send after a short delay when speech is complete
+      setTimeout(() => {
+        if (this.inputField.value.trim()) {
+          this.sendMessage();
+        }
+      }, 500);
+    };
 
-    this.speechHandler.setOnError((error) => {
-      this.showError(error);
+    this.speechHandler.onError = (error) => {
+      console.error('Speech recognition error:', error);
       this.voiceBtn.classList.remove('recording');
-    });
+      this.thinkingIndicator.textContent = 'Error: ' + error;
+      setTimeout(() => {
+        this.thinkingIndicator.style.display = 'none';
+      }, 3000);
+    };
 
-    this.speechHandler.setOnStart(() => {
+    this.speechHandler.onStart = () => {
+      this.voiceBtn.innerHTML = '🎤<span class="pulse"></span>';
       this.voiceBtn.classList.add('recording');
-    });
+      this.thinkingIndicator.textContent = 'Listening...';
+      this.thinkingIndicator.style.display = 'block';
+      this.inputField.placeholder = 'Speak now...';
+    };
 
-    this.speechHandler.setOnEnd(() => {
+    this.speechHandler.onEnd = () => {
+      this.voiceBtn.innerHTML = '🎤';
       this.voiceBtn.classList.remove('recording');
-    });
+      this.inputField.placeholder = 'Type your message...';
+      this.thinkingIndicator.textContent = 'Processing...';
+    };
   }
 
   toggleChat() {
@@ -163,47 +185,30 @@ export class ChatWidget {
   async sendMessage() {
     if (!this.initialized) return;
     const message = this.inputField.value.trim();
-    
     if (!message) return;
 
-    // Clear input
-    this.inputField.value = '';
-    this.inputField.style.height = 'auto';
-
-    // Hide welcome message
-    this.hideWelcomeMessage();
-
-    // Add user message to UI
-    this.addMessage('user', message);
-
-    // Show typing indicator
-    this.showTypingIndicator();
-
     try {
-      // Send to Groq API with streaming
-      let botResponse = '';
-      let messageElement = null;
+      // Add user message to chat
+      this.addMessage('user', message);
+      this.inputField.value = '';
+      this.inputField.style.height = 'auto';
+      this.thinkingIndicator.style.display = 'none';
 
-      await this.groqClient.sendMessage(message, (chunk, fullText) => {
-        // Update message in real-time
-        if (!messageElement) {
-          this.hideTypingIndicator();
-          messageElement = this.addMessage('bot', chunk, true);
-        } else {
-          this.updateMessage(messageElement, fullText);
-        }
-        botResponse = fullText;
-      });
+      // Show typing indicator
+      this.showTypingIndicator();
 
-      // If streaming didn't work, add the full response
-      if (!messageElement && botResponse) {
-        this.hideTypingIndicator();
-        this.addMessage('bot', botResponse);
+      // Send to Groq API
+      const response = await this.groqClient.sendMessage(message, this.messages);
+      
+      // Add bot response to chat
+      this.hideTypingIndicator();
+      if (response) {
+        this.addMessage('assistant', response);
       }
 
       // Save chat history
       this.saveChatHistory();
-
+      
     } catch (error) {
       console.error('Error sending message:', error);
       this.hideTypingIndicator();
