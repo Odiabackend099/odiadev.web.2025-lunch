@@ -9,15 +9,22 @@ import { COMPANY_KNOWLEDGE } from './company-knowledge.js';
 export class ChatWidget {
   constructor() {
     this.isOpen = false;
+    this.messages = [];
+    this.initialized = false;
+
+    if (!this.initElements()) {
+      console.warn('ODIADEV Chat Widget: required DOM elements not found. Initialization skipped.');
+      return;
+    }
+
     this.groqClient = new GroqClient();
     this.speechHandler = new SpeechHandler();
-    this.messages = [];
-    
-    this.initElements();
+    this.loadChatHistory();
+
+    this.initialized = true;
+
     this.initEventListeners();
     this.initSpeechHandlers();
-    this.loadChatHistory();
-    
     console.log('ODIADEV Chat Widget initialized');
   }
 
@@ -32,6 +39,23 @@ export class ChatWidget {
     this.voiceBtn = document.getElementById('voice-button');
     this.sendBtn = document.getElementById('send-button');
     this.welcomeSection = document.getElementById('welcome-section');
+
+    const missing = [];
+    if (!this.widget) missing.push('chat-widget');
+    if (!this.fab) missing.push('chat-fab');
+    if (!this.window) missing.push('chat-window');
+    if (!this.closeBtn) missing.push('chat-close');
+    if (!this.messagesContainer) missing.push('chat-messages');
+    if (!this.inputField) missing.push('chat-input');
+    if (!this.voiceBtn) missing.push('voice-button');
+    if (!this.sendBtn) missing.push('send-button');
+
+    if (missing.length > 0) {
+      console.warn('ODIADEV Chat Widget: missing DOM elements ->', missing.join(', '));
+      return false;
+    }
+
+    return true;
   }
 
   initEventListeners() {
@@ -97,6 +121,7 @@ export class ChatWidget {
   }
 
   toggleChat() {
+    if (!this.initialized) return;
     if (this.isOpen) {
       this.closeChat();
     } else {
@@ -136,6 +161,7 @@ export class ChatWidget {
   }
 
   async sendMessage() {
+    if (!this.initialized) return;
     const message = this.inputField.value.trim();
     
     if (!message) return;
@@ -265,6 +291,7 @@ export class ChatWidget {
   }
 
   toggleVoice() {
+    if (!this.initialized) return;
     if (!this.speechHandler.isSupported()) {
       this.showError('Speech recognition is not supported in your browser. Please use Chrome, Edge, or Safari.');
       return;
