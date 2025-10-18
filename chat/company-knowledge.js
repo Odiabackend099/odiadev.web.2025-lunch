@@ -4,71 +4,70 @@
 export const COMPANY_KNOWLEDGE = {
   company: {
     name: "ODIADEV AI LTD",
-    tagline: "The Pursuit of AI Excellence",
-    description: "Nigeria's Voice-AI Infrastructure Platform",
-    mission: "Transforming businesses with intelligent voice agents and cultural AI understanding",
-    location: "Lagos, Nigeria",
+    tagline: "Human-Like Voice AI for Your Business",
+    description: "We build human-like voice AI assistants for businesses worldwide — helping them answer, qualify, and book customers 24/7.",
+    mission: "To provide businesses with intelligent, human-like voice AI assistants that automate and improve customer interactions.",
+    location: "Abuja, Nigeria",
     founded: "2024",
     website: "https://odia.dev"
   },
 
   products: {
-    adaquaAI: {
-      name: "Adaqua AI",
-      status: "Flagship Product",
-      description: "Production voice-AI platform with natural Nigerian accents. Integrates with WhatsApp, Telegram, and web chat widgets.",
+    callWaitingAI: {
+      name: "CallWaiting.ai",
+      status: "For SMBs",
+      description: "An AI receptionist that answers calls, qualifies leads, and books appointments, ensuring you never miss a customer.",
       features: [
-        "Nigerian English + local languages support",
-        "Real-time speech & text processing",
-        "Secure APIs, Supabase-friendly",
-        "WhatsApp & Telegram integration",
-        "Natural Nigerian accent synthesis"
+        "24/7 Call Answering",
+        "Lead Qualification & Booking",
+        "Seamless CRM Integration",
+        "For Small & Medium Businesses"
       ],
       useCases: [
-        "Customer service automation",
-        "Voice-enabled chatbots",
-        "Multilingual support systems"
+        "Automated receptionist for SMBs",
+        "After-hours call answering",
+        "Appointment booking"
       ]
     },
-    crossAI: {
-      name: "Cross AI",
-      description: "Emergency response & dispatch assistant for states, hospitals, and campuses.",
+    serenityCareAI: {
+      name: "SerenityCare AI",
+      description: "Automated, empathetic support for mental health services, providing a safe space for users to feel heard.",
       features: [
-        "Voice intake & classification",
-        "Intelligent incident triage",
-        "Seamless handoff to responders",
-        "NDPR-aligned logging"
+        "Empathetic AI Conversations",
+        "Confidential & Secure",
+        "24/7 Mental Health Support",
+        "Resource & Appointment Booking"
       ],
-      targetMarket: "Government agencies, hospitals, universities"
+      targetMarket: "Mental health providers, hospitals, wellness platforms"
     },
-    missLegalAI: {
-      name: "MISS Legal AI",
-      description: "Legal front-desk & case-status assistant for law firms. Intake, FAQs, reminders, and safe client updates.",
+    adaquaAI: {
+      name: "Adaqua AI",
+      description: "Automated marketing and content generation powered by AI, designed to grow your brand's presence online.",
       features: [
-        "WhatsApp + Web widget integration",
-        "Secure client workflows",
-        "Multi-language support",
-        "Configurable prompts & guardrails"
+        "AI-Powered Content Creation",
+        "Automated Social Media Marketing",
+        "Personalized Customer Outreach",
+        "Analytics & Performance Tracking"
       ],
-      targetMarket: "Law firms, legal departments"
+      targetMarket: "Marketing agencies, content creators, businesses"
     }
   },
 
   team: [
     {
       name: "Austyn Eguale",
-      role: "Chief Executive Officer (CEO)",
+      role: "CEO & Product Lead",
       description: "Founder and visionary leader"
     },
     {
-      name: "Peter Ntaji",
-      role: "Director, Government Partnerships",
-      description: "Leading government and institutional partnerships"
+      name: "[Add Co-founder names]",
+      role: "Co-founder",
+      description: ""
     },
     {
-      name: "Benjamin Nwoye",
-      role: "Director, Commercial Strategy",
-      description: "Driving commercial growth and strategy"
+      name: "[Add Advisor/Legal Counsel if available]",
+      role: "Advisor/Legal Counsel",
+      description: ""
     }
   ],
 
@@ -92,13 +91,12 @@ export const COMPANY_KNOWLEDGE = {
 
   contact: {
     email: {
-      general: "contact@odia.dev",
-      sales: "sales@odia.dev"
+      support: "support@odia.dev"
     },
     phone: {
-      whatsapp: "+234 812 345 6789"
+      main: "+2348141995397"
     },
-    location: "Lagos, Nigeria",
+    address: "26 Romford Suncity Abuja, Nigeria",
     social: {
       linkedin: "https://linkedin.com/company/odiadev",
       twitter: "https://x.com/odiadev"
@@ -106,45 +104,37 @@ export const COMPANY_KNOWLEDGE = {
   },
 
   services: [
-    "Voice AI Agent Development",
-    "Custom AI Solutions",
-    "WhatsApp AI Integration",
-    "Emergency Response Systems",
-    "Legal AI Automation",
-    "Multilingual Voice Processing",
-    "Nigerian Accent Synthesis"
+    "Human-Like Voice AI Assistants",
+    "AI Receptionist for SMBs",
+    "Mental Health Support Automation",
+    "Automated Marketing & Content Generation",
+    "Custom AI Solutions"
   ],
 
   differentiators: [
-    "Natural Nigerian accents and local language support",
-    "Built specifically for Nigerian market and infrastructure",
-    "Deep understanding of cultural context",
-    "Optimized for 2G/3G networks",
-    "NDPR (Nigeria Data Protection Regulation) compliant",
-    "Employee-owned and independent firm",
-    "30+ years combined team experience"
+    "Human-like, natural-sounding voice AI with Nigerian accents",
+    "Proprietary 1.2 billion parameter Odiadev AI TTS engine",
+    "Focus on answering, qualifying, and booking customers 24/7",
+    "Serving businesses worldwide from our headquarters in Abuja, Nigeria",
+    "Legally registered Nigerian technology company (RC ######)"
   ],
 
   faqs: [
     {
-      question: "What makes ODIADEV different from other AI companies?",
-      answer: "We specialize in voice-AI infrastructure built specifically for Nigeria, with natural Nigerian accents, local language support, and optimization for Nigerian network conditions. We're employee-owned and independent, giving us flexibility to create tailored solutions."
+      question: "What does ODIADEV AI LTD do?",
+      answer: "We build human-like voice AI assistants for businesses worldwide, helping them answer, qualify, and book customers 24/7. Our platforms include CallWaiting.ai, SerenityCare AI, and Adaqua AI."
     },
     {
-      question: "Which languages do you support?",
-      answer: "We support Nigerian English and are expanding to local languages including Yoruba, Igbo, and Hausa. Our Adaqua AI platform is designed for multilingual voice processing."
+      question: "What is CallWaiting.ai?",
+      answer: "CallWaiting.ai is an AI receptionist for small and medium businesses. It answers calls, qualifies leads, and books appointments, so you never miss a customer."
     },
     {
-      question: "How can I integrate ODIADEV AI into my business?",
-      answer: "We offer multiple integration options including WhatsApp, Telegram, web chat widgets, and secure APIs. Contact our sales team at sales@odia.dev to discuss your specific needs."
+      question: "How can I contact ODIADEV AI LTD?",
+      answer: "You can contact us via email at support@odia.dev or by phone at +234 814 199 5397. Our office is located at 26 Romford Suncity Abuja, Nigeria."
     },
     {
-      question: "Is your platform NDPR compliant?",
-      answer: "Yes, all our products including Cross AI and MISS Legal AI are built with NDPR (Nigeria Data Protection Regulation) compliance in mind, with secure logging and data handling."
-    },
-    {
-      question: "What industries do you serve?",
-      answer: "We serve multiple sectors including customer service, emergency response (government, hospitals, campuses), legal services, and any business needing voice-AI automation in Nigeria."
+      question: "What is Odiadev AI TTS?",
+      answer: "Odiadev AI TTS is our proprietary text-to-speech engine with 1.2 billion parameters. It powers our platforms and enables us to create human-like voice AI with natural Nigerian accents."
     }
   ]
 };
@@ -153,23 +143,24 @@ export const COMPANY_KNOWLEDGE = {
 export function generateSystemPrompt() {
   const { company, products, team, contact, services, differentiators } = COMPANY_KNOWLEDGE;
   
-  return `You are an AI assistant for ${company.name}, ${company.description}.
+  return `You are an AI assistant for ${company.name}, a company that builds ${company.tagline}.
 
 COMPANY OVERVIEW:
-${company.name} is ${company.description} based in ${company.location}. Our mission: ${company.mission}
+${company.name} is headquartered in ${company.location}. ${company.description}
 
 PRODUCTS:
-1. ${products.adaquaAI.name} (${products.adaquaAI.status}): ${products.adaquaAI.description}
+1. ${products.callWaitingAI.name} (${products.callWaitingAI.status}): ${products.callWaitingAI.description}
+   Features: ${products.callWaitingAI.features.join(', ')}
+
+2. ${products.serenityCareAI.name}: ${products.serenityCareAI.description}
+   Features: ${products.serenityCareAI.features.join(', ')}
+
+3. ${products.adaquaAI.name}: ${products.adaquaAI.description}
    Features: ${products.adaquaAI.features.join(', ')}
 
-2. ${products.crossAI.name}: ${products.crossAI.description}
-   Features: ${products.crossAI.features.join(', ')}
-
-3. ${products.missLegalAI.name}: ${products.missLegalAI.description}
-   Features: ${products.missLegalAI.features.join(', ')}
-
 LEADERSHIP TEAM:
-${team.map(member => `- ${member.name}, ${member.role}`).join('\n')}
+${team.map(member => `- ${member.name}, ${member.role}`).join('
+')}
 
 SERVICES:
 ${services.join(', ')}
@@ -178,15 +169,15 @@ KEY DIFFERENTIATORS:
 ${differentiators.join('; ')}
 
 CONTACT:
-- Email: ${contact.email.general} (general), ${contact.email.sales} (sales)
-- WhatsApp: ${contact.phone.whatsapp}
-- Location: ${contact.location}
+- Email: ${contact.email.support}
+- Phone: ${contact.phone.main}
+- Address: ${contact.address}
 
 YOUR ROLE:
 - Answer questions about ODIADEV AI, our products, team, and services
 - Be helpful, professional, and knowledgeable
 - Use Nigerian English and cultural context when appropriate
-- If you don't know something, direct users to contact@odia.dev
+- If you don't know something, direct users to support@odia.dev
 - Keep responses concise but informative (2-4 sentences ideal)
 - Encourage users to try demos or contact sales for detailed discussions
 

@@ -53,3 +53,5 @@ pids
 
 # Chat Widget - Local API keys
 chat/config.local.js
+secrets.js
+chat/config.js

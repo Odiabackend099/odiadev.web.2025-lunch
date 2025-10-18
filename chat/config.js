@@ -1,45 +1,9 @@
-// Chat Widget Configuration
-// WARNING: In production, move API key to serverless function (Vercel Edge Function)
-// This is exposed in client-side code - use environment variables for production
+// This file is for API keys and other configuration.
+// It is in .gitignore to avoid committing secrets.
 
-export const CONFIG = {
-  // Groq API Configuration
-  groq: {
-    apiKey: (window.__ODIADEV_CHAT_CONFIG__ && window.__ODIADEV_CHAT_CONFIG__.apiKey) || 'YOUR_GROQ_API_KEY_HERE',
-    apiUrl: 'https://api.groq.com/openai/v1/chat/completions',
-    model: 'llama-3.1-8b-instant', // Recommended production model (as of Oct 2025)
-    maxTokens: 1024,
-    temperature: 0.7,
-    streamingEnabled: true
-  },
-
-  // Speech Recognition Configuration
-  speech: {
-    language: 'en-NG', // Nigerian English
-    fallbackLanguage: 'en-US',
-    continuous: false,
-    interimResults: true,
-    maxAlternatives: 1
-  },
-
-  // Chat Widget Settings
-  widget: {
-    position: 'bottom-right', // bottom-right, bottom-left
-    welcomeMessage: "Hi! I'm ODIADEV AI Assistant. Ask me anything about our voice-AI solutions, products, or team!",
-    suggestedPrompts: [
-      "Tell me about Adaqua AI",
-      "What is Cross AI?",
-      "How can I contact your team?",
-      "What services do you offer?"
-    ],
-    maxHistoryLength: 50,
-    persistHistory: true,
-    showTimestamps: false
-  },
-
-  // Rate Limiting
-  rateLimiting: {
-    maxRequestsPerMinute: 20,
-    requestDelay: 1000 // ms between requests
-  }
+const config = {
+    GROQ_API_KEY: "GROQ_API_KEY_PLACEHOLDER",
+    MINIMAX_API_KEY: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJHcm91cE5hbWUiOiJPRElBIGJhY2tlbmQiLCJVc2VyTmFtZSI6Ik9ESUEgYmFja2VuZCIsIkFjY291bnQiOiIiLCJTdWJqZWN0SUQiOiIxOTMzNTEwOTg4MDAzMjgzNzUxIiwiUGhvbmUiOiIiLCJHcm91cElEIjoiMTkzMzUxMDk4Nzk5NDg5NTE0MyIsIlBhZ2VOYW1lIjoiIiwiTWFpbCI6Im9kaWFiYWNrZW5kQGdtYWlsLmNvbSIsIkNyZWF0ZVRpbWUiOiIyMDI1LTEwLTE2IDA0OjE2OjE4IiwiVG9rZW5UeXBlIjoxLCJpc3MiOiJtaW5pbWF4In0.S0kZ7gf6QVL0kXC2z0bil95E0DTzvDRHY9zi_qehWa0ojG4ESeEVxcNkXWacKC5XjWud-X4Qt9K0tfNZdfbBi_LyPwZJEEnug6E_dsKNykaQecSNTyJHKmmHYR_vMJNujLGH2Lv6UsfNHGUVB4AotCx1O2tcNZU_jT0jM3KdhHjds6m2oQ20GlxhtATTf0_SNzh_pX0l-TXEnWj-EVsMmmNmzP9-HP99W6mXqonQv-u3iLMm95gEOhtnVFB_nk-YZ7se_Om9z3wOKVLNotwm_GQJDx2wV9hD0zciJppm2vK8WSJ-St0Hdt412jzcx_aO2j6wRgrM1vbwG6BU5x2LEQ",
+    MINIMAX_VOICE_ID: "moss_audio_141d8c4c-a6f8-11f0-84c1-0ec6fa858d82",
+    MINIMAX_GROUP_ID: "1933510987994895143"
 };
