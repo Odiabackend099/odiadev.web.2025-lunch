@@ -1,5 +1,41 @@
 // ODIADEV PWA Registration & Enhancements
 document.addEventListener('DOMContentLoaded', () => {
+  // Chat Widget Toggle Functionality
+  const chatFab = document.getElementById('chat-fab');
+  const chatWindow = document.getElementById('chat-window');
+  const chatClose = document.getElementById('chat-close');
+  
+  if (chatFab && chatWindow) {
+    // Toggle chat window when clicking the FAB
+    chatFab.addEventListener('click', (e) => {
+      e.preventDefault();
+      chatWindow.style.display = chatWindow.style.display === 'block' ? 'none' : 'block';
+      chatFab.style.display = 'none';
+      // Focus the input when opening
+      if (chatWindow.style.display === 'block') {
+        const input = document.getElementById('chat-widget-input');
+        if (input) setTimeout(() => input.focus(), 100);
+      }
+    });
+    
+    // Close chat window
+    if (chatClose) {
+      chatClose.addEventListener('click', (e) => {
+        e.preventDefault();
+        chatWindow.style.display = 'none';
+        chatFab.style.display = 'flex';
+      });
+    }
+    
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!chatWindow.contains(e.target) && e.target !== chatFab) {
+        chatWindow.style.display = 'none';
+        chatFab.style.display = 'flex';
+      }
+    });
+  }
+
   // Register Service Worker for PWA functionality
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js')
