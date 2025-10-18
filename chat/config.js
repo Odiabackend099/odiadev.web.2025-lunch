@@ -7,7 +7,7 @@ export const CONFIG = {
   groq: {
     apiKey: (window.__ODIADEV_CHAT_CONFIG__ && window.__ODIADEV_CHAT_CONFIG__.apiKey) || 'YOUR_GROQ_API_KEY_HERE',
     apiUrl: 'https://api.groq.com/openai/v1/chat/completions',
-    model: 'mixtral-8x7b-32768', // Fast and capable model
+    model: 'mixtral-8x7b-4096', // Recommended model (mixtral-8x7b-32768 was decommissioned)
     maxTokens: 1024,
     temperature: 0.7,
     streamingEnabled: true
