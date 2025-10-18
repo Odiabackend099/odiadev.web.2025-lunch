@@ -1,18 +1,47 @@
-# Allow all crawlers & bots to access the website
-# Including AI bots from Google, OpenAI, etc.
-# For more information, see https://www.robotstxt.org/robotstxt.html
-# and https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt
+# ODIADEV AI - Robots.txt
+# Allow all search engines and AI crawlers to index our content
+# Last updated: 2025-10-18
 
+# Global rules for all crawlers
 User-agent: *
 Allow: /
+Disallow: /private/
+Disallow: /admin/
 
+# Major search engines
 User-agent: Googlebot
 Allow: /
 
-User-agent: GPTBot
+User-agent: Bingbot
 Allow: /
 
-User-agent: Google-Extended
+User-agent: Baiduspider
 Allow: /
 
-Sitemap: https://odia.dev/sitemap.xml
+User-agent: Yandex
+Allow: /
+
+# AI and LLM crawlers
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Sitemap location
+Sitemap: https://odiadev.ai/sitemap.xml
+
+# Crawl-delay: 10  # Adjust based on server capacity
+
+# Additional directives
+# Host: odiadev.ai  # Uncomment and set your preferred domain
+# Clean-param: ref /search/  # Example of parameter handling
