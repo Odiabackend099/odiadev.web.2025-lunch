@@ -50,3 +50,6 @@ pids
 # Cache
 .cache/
 .parcel-cache/
+
+# Chat Widget - Local API keys
+chat/config.local.js
