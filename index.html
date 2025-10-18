@@ -36,6 +36,9 @@
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   
+  <!-- Chat Widget Styles -->
+  <link rel="stylesheet" href="/chat-widget.css" />
+  
   <!-- Preload hero background image -->
   <link rel="preload" as="image" href="assets/img/hero-3d.webp" />
 
@@ -479,10 +482,84 @@
     </div>
   </footer>
 
+  <!-- Chat Widget -->
+  <div id="chat-widget" class="chat-widget">
+    <!-- Floating Action Button -->
+    <button id="chat-fab" class="chat-fab" aria-label="Open chat">
+      <svg class="chat-fab-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+      </svg>
+    </button>
+
+    <!-- Chat Window -->
+    <div id="chat-window" class="chat-window">
+      <!-- Header -->
+      <div class="chat-header">
+        <div class="chat-header-info">
+          <div class="chat-avatar">
+            <img src="assets/img/logo.png" alt="ODIADEV AI" />
+          </div>
+          <div class="chat-header-text">
+            <h3>ODIADEV AI Assistant</h3>
+            <p>Online • Powered by Groq</p>
+          </div>
+        </div>
+        <button id="chat-close" class="chat-close" aria-label="Close chat">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Messages Area -->
+      <div id="chat-messages" class="chat-messages">
+        <!-- Welcome Message -->
+        <div id="welcome-section" class="welcome-message">
+          <h4>👋 Welcome to ODIADEV AI!</h4>
+          <p>Ask me anything about our voice-AI solutions, products, or team. You can type or use voice input!</p>
+          <div class="suggested-prompts">
+            <button class="prompt-button">Tell me about Adaqua AI</button>
+            <button class="prompt-button">What is Cross AI?</button>
+            <button class="prompt-button">How can I contact your team?</button>
+            <button class="prompt-button">What services do you offer?</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input Area -->
+      <div class="chat-input-area">
+        <div class="chat-input-container">
+          <div class="chat-input-wrapper">
+            <textarea 
+              id="chat-input" 
+              class="chat-input" 
+              placeholder="Type your message or use voice..."
+              rows="1"
+              aria-label="Chat message input"
+            ></textarea>
+          </div>
+          <button id="voice-button" class="voice-button" aria-label="Voice input" title="Click to speak">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path>
+            </svg>
+          </button>
+          <button id="send-button" class="send-button" aria-label="Send message">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
     if('serviceWorker' in navigator){
       navigator.serviceWorker.register('/sw.js').catch(()=>{});
     }
   </script>
+  
+  <!-- Chat Widget Scripts (ES6 Modules) -->
+  <script type="module" src="/chat/chat-widget.js"></script>
 </body>
 </html>

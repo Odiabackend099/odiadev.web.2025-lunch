@@ -1,3 +1,18 @@
+# Allow all crawlers & bots to access the website
+# Including AI bots from Google, OpenAI, etc.
+# For more information, see https://www.robotstxt.org/robotstxt.html
+# and https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt
+
 User-agent: *
 Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://odia.dev/sitemap.xml
