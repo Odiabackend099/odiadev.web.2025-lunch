@@ -7,7 +7,7 @@ export const CONFIG = {
   groq: {
     apiKey: (window.__ODIADEV_CHAT_CONFIG__ && window.__ODIADEV_CHAT_CONFIG__.apiKey) || 'YOUR_GROQ_API_KEY_HERE',
     apiUrl: 'https://api.groq.com/openai/v1/chat/completions',
-    model: 'mixtral-8x7b-4096', // Recommended model (mixtral-8x7b-32768 was decommissioned)
+    model: 'llama3-8b-8192', // Using Llama 3 as alternative (8B parameter model)
     maxTokens: 1024,
     temperature: 0.7,
     streamingEnabled: true
